@@ -1,0 +1,62 @@
+h1. Example Code for the Web Design Topics Series
+
+The scripts in this repository contain the code used in ??A Web Developer's Guide to Secure Communication?? by Nigel Chapman and Jenny Chapman, published by MacAvon Media. Further examples will be added as more books in the series are published.
+
+The purpose of the repository is to allow readers to download the examples from the book so they can experiment with them, and to provide starting points for their own scripts.
+
+The scripts in this repository are provided solely for the purposes of illustrating some principles of cryptography and secure communication. They are not intended for serious use in sensitive applications. We strongly recommend that you always use established libraries that provide implementations of current algorithms which are considered secure at the time of use. Neither the publisher nor the authors shall be liable for any consequence arising from the use of scripts in this book for any purpose other than illustration of general principles in the context of learning.
+
+Pull requests will only be accepted for bugs and other errors, because we intend the repository to reflect the book as it was published. If you want to make major changes to the scripts, please fork the repository.
+
+h2. Dependencies
+
+Running the examples requires "Node.js":http://nodejs.org/.
+
+If you want to run the tests in @encryption/test@, you will need "nodeunit":https://github.com/caolan/nodeunit.
+
+The most convenient way to install nodeunit and any other modules you may want is by using the npm package manager. If you install Node.js using its installer, npm should have been installed, otherwise, you can "install npm by hand":http://npmjs.org/doc/README.html.
+
+h2. Contents
+
+h3. Extensions
+
+The @lib@ directory contains some extensions to JavaScript's built-in objects, which we used in the book to make the examples more readable. Some simple tests are included.
+
+From the preface:
+
+bq.  A somewhat controversial aspect of the example programs is our use of custom extensions to some of JavaScript’s built-in object prototypes. We are aware of the objections to this practice, and would not recommend its use in most production environments. However, it has allowed a significant improvement in the readability of some examples, so we feel that it is justified in this context.
+
+If you want to use similar extensions in your own JavaScript programs, we suggest you look at the "underscore.js":http://documentcloud.github.com/underscore/  library.
+
+h3. Encryption
+
+Inside the @encryption@ directory, you can find the scripts implementing the cryptographic algorithms from the book. Listings 1–6 in the book map to files in the @lib@ sub-directory as follows:
+
+Listing 1 @shift-cipher.js@
+Listing 2 @shift-cipher-stream.js@
+Listing 3 @random-shift-cipher-stream.js@
+Listing 4 @xor-base64-cipher-stream.js@
+Listing 5 @transposition-cipher.js@
+Listing 6 @feistel.js@
+
+The @test@ sub-directory has some rudimentary tests of the modules in @lib@.
+
+The @examples@ sub-directory has some short scripts that exercise the modules in @lib@, and the source for the remaining listings in the book.
+
+Listing 7 @openssl-cipher.js@
+Listing 8 @openssl-cipher-file.js@
+Listing 9 @auto-digest.js@
+Listing 10 @auto-hmac.js@
+
+The @TLS@ sub-directory has the examples of simple TLS/SSL and HTTPS servers.
+
+Listing 13 @echo-plus.js@
+Listing 14 @https.js@
+
+To run either of these examples, you will need to create a self-signed certificate and private key.
+
+The line numbering in all the examples matches the line numbers in the listings in the book.
+
+h2. Licence
+
+This code is intended for educational purposes and is released under the terms of the *The BSD 2-Clause License*. See the file @licence.txt@ for details.
