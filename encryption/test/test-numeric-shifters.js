@@ -3,6 +3,7 @@
   var Shifter = require('../lib/' + algorithm + '.js');
 
   var sh = new Shifter(-145, 3);
+  var sh1 = new Shifter(-144, 3);
   var s = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
 
   exports[algorithm +':changes'] = function(test) {
@@ -12,6 +13,11 @@
 
   exports[algorithm +':inverts'] = function(test) {
     test.equal(s, sh.decrypt(sh.encrypt(s)));
+    test.done();
+  };
+
+  exports[algorithm +':does not invert with wrong key'] = function(test) {
+    test.notEqual(s, sh1.decrypt(sh.encrypt(s)));
     test.done();
   };
 

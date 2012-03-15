@@ -2,7 +2,7 @@ require(__dirname+'/../../lib/extensions');
 
 var Transposition = function(code_word){
   this._keys = code_word.split('');
-  this._sorted_keys = this._keys.sort();
+  this._sorted_keys = this._keys.slice(0).sort();
 }  
 
 Transposition.prototype.encrypt = function(s) {

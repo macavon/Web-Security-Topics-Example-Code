@@ -5,6 +5,7 @@ util = require('util');
   var Shifter = require('../lib/' + algorithm + '.js');
 
   var sh = new Shifter('dskijkfpie fweofi erghamsmcalwe');
+  var sh1 = new Shifter('dskijkfpiefweofi erghamsmcalwe');
   // var s = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
   var s = 'Able was I ere I saw Elba';
   
@@ -17,6 +18,11 @@ util = require('util');
 
   exports[algorithm +':inverts'] = function(test) {
     test.equal(s, sh.decrypt(sh.encrypt(s)));
+    test.done();
+  };
+
+  exports[algorithm +':does not invert with wrong key'] = function(test) {
+    test.notEqual(s, sh1.decrypt(sh.encrypt(s)));
     test.done();
   };
 
