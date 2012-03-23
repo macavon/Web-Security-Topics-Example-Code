@@ -1,12 +1,16 @@
 h1. Example Code for the Web Design Topics Series
 
-The scripts in this repository contain the code used in ??A Web Developer's Guide to Secure Communication?? by Nigel Chapman and Jenny Chapman, published by MacAvon Media. Further examples will be added as more books in the series are published.
+The scripts in this repository contain the code used in "A Web Developer's Guide to Secure Communication":http://www.amazon.com/dp/0956737048/ by Nigel Chapman and Jenny Chapman, published by MacAvon Media. Further examples will be added as more books in the series are published.
 
 The purpose of the repository is to allow readers to download the examples from the book so they can experiment with them, and to provide starting points for their own scripts.
 
 The scripts in this repository are provided solely for the purposes of illustrating some principles of cryptography and secure communication. They are not intended for serious use in sensitive applications. We strongly recommend that you always use established libraries that provide implementations of current algorithms which are considered secure at the time of use. Neither the publisher nor the authors shall be liable for any consequence arising from the use of scripts in this book for any purpose other than illustration of general principles in the context of learning.
 
 Pull requests will only be accepted for bugs and other errors, because we intend the repository to reflect the book as it was published. If you want to make major changes to the scripts, please fork the repository.
+
+h2. Errata
+
+Errata are included in the errata directory.
 
 h2. Dependencies
 

@@ -1,0 +1,11 @@
+h1. Errata for A Web Developer's Guide to Secure Communications
+
+h2. Secret Key Cryptography
+
+There is a stupid bug in Listing 5 on page 35, the transposition cipher. JavaScript arrays are assigned by reference, so @this._keys@ and @this._sorted_keys@ both point to the same array. Using a well-known trick, this can be rectified by replacing line 5 with
+
+<pre>
+  this._sorted_keys = this._keys.slice(0).sort();
+</pre>
+
+The code in the repository has been updated accordingly.
