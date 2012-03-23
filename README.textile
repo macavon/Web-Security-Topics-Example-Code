@@ -10,7 +10,7 @@ Pull requests will only be accepted for bugs and other errors, because we intend
 
 h2. Errata
 
-Errata are included in the errata directory.
+Notes and corrections to errors discovered after the book was published are included in the errata directory.
 
 h2. Dependencies
 
