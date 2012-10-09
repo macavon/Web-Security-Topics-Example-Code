@@ -1,1 +1,7 @@
-usersMongoDB/*
+.tm_properties
+.DS_Store
+pids
+logs
+AuthAndAuth/db/migrate
+AuthAndAuth/db/schema.rb
+AuthAndAuth/test/functional

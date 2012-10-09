@@ -1,0 +1,10 @@
+		<div class="field required">
+			<label for="user_email">Your email address</label>
+			<input type="text" name="user[email]" id="user_email" value="<%- maybe(u, 'email') %>"/>
+		</div>
+		<div class="field required">
+			<label for="user_password">Choose a password</label><input type="password" name="user[password]" id="user_password" />
+		</div>
+		<div class="field required">
+			<label for="user_confirm">Confirm the password</label><input type="password" name="user[confirm]" id="user_confirm" />
+		</div>

@@ -1,0 +1,13 @@
+<h1>Assign This User's Role</h1>
+<div id="user-form">
+	<%- messages() %>
+  <h2><%= u.email %> <span class="role"><%= u.roleName %></span></h2>
+	<form action="./../<%= u.id %>" method="post">
+     <input type="hidden" name="_method" value="put" />
+		<div class="field">
+			<label for="role_level">Role</label>
+			<input type="text" name="user[role_level]" id="user_role_level" value="<%- u.roleLevel %>"/>
+		</div>
+			<input type="submit" name="submit" value="Update" id="submit" />
+	</form>
+</div>

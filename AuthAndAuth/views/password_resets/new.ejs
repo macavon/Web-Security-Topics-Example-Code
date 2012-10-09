@@ -1,0 +1,12 @@
+<h1>Forgotten Password</h1>
+<p>Please fill in your email address and submit this form. We will send you an email containing instructions for resetting your password.</p>
+<div id="password-reset-request-form">
+	<%- messages() %>
+	<form action="/password_reset" method="post">
+		<div class="field required">
+			<label for="user_email">Your email address</label>
+			<input type="text" name="user[email]" id="user_email" value="<%- maybe(u, 'email') %>"/>
+		</div>
+		<input type="submit" name="submit" value="Submit request" id="submit" />
+	</form>
+</div>

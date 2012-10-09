@@ -1,0 +1,9 @@
+<h1>Edit Your Notice</h1>
+<div id="notice-form">
+	<%- messages() %>
+	<form action="./../<%= n.id %>" method="post">
+     <input type="hidden" name="_method" value="put" />
+			<%- partial('forms/notice_fields') %>
+			<input type="submit" name="submit" value="Update" id="submit" />
+	</form>
+</div>

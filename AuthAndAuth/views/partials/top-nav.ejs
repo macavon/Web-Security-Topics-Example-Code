@@ -1,0 +1,20 @@
+<ul class="navigation">
+	<% if (loggedIn) { %>
+  <li class="user"><a href="/user"><%= currentUser.email %></a></li>
+	<li><a href="/user/notices">Notices</a></li>
+	<li><a href="/user/edit">Settings</a></li>
+  <% if (premiumUser) { %>
+  <li><a href="/premium/signature">Signature</a></li>
+  <% } %>
+	<li><%- partial('partials/logout') %></li>
+  <% if (enterpriseUser) { %>
+    <li><a href="/enterprise/users">Users</a></li>
+  <% }%>
+	<% } else {
+	       if (app.set('auth_method') != 'http-basic') {%>
+	<li><a href="/login">Log In</a></li>
+	<% } %>
+		<li><a href="/user/new">Create an Account</a></li>
+	<% }%>
+  <!-- <li><a href="/authenticated_only/123">Go</a></li> -->
+</ul>

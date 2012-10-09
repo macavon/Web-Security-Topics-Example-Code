@@ -1,0 +1,9 @@
+<h1>Your Account Details</h1>
+<h2 class="user"><%- user.email %> <span class="role"><%= user.roleName %></span></h2>
+<form action="/user" method="post" accept-charset="utf-8">
+	<div class="actionlinks">
+		<input type="hidden" name="_method" value="delete" />
+		<a href="/user/edit">Change email or password</a>
+		<input type="submit" value="Delete account" />
+	</div>
+</form>

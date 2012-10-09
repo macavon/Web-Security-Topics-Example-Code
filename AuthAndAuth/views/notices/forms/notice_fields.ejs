@@ -1,0 +1,8 @@
+		<div class="field">
+			<label for="notice_heading">Heading</label>
+			<input type="text" name="notice[heading]" id="notice_heading" value="<%- maybe(n, 'heading') %>"/>
+		</div>
+		<div class="field">
+			<label for="notice_body">Your Notice</label>
+      <textarea name="notice[body]" id="notice_body" rows=15 cols=40><%= maybe(n, 'body') %></textarea>
+		</div>

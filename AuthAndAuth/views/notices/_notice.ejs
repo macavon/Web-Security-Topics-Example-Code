@@ -1,0 +1,5 @@
+<li><%= notice.createdAt %>: <a href="./notices/<%= notice.id %>"><%= notice.heading %></a>
+  <% if (!notice.isPublic()) { %>
+  -> <%= notice.recipientList %>
+  <% } %>
+</li>

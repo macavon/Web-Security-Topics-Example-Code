@@ -1,0 +1,335 @@
+@import "_definitions";
+.header {
+  color: @header_colour;
+  font-family: @header_font;
+/*  font-weight: bold;*/
+  letter-spacing: 0.1em;
+	text-align: left;
+}
+
+.knocked-out {
+  background-color: @emphasis_colour;
+  color: @background_colour;
+}
+
+.rounded {
+	-webkit-border-radius: 12px;
+	   -moz-border-radius: 12px;
+	        border-radius: 12px;
+}
+
+.button {
+	padding: 4px 12px;
+	margin-top: 18px;
+	font-size: 1.25em;
+	border: solid 1px @label_background_colour;
+	background-color: @input_background_colour;
+	.rounded;
+}
+
+.hovered_button {
+	padding: 0 8px;
+	border-width: 5px;
+}
+
+.plainlink {
+	text-decoration: none;
+	color: inherit;
+}
+
+* {
+  margin: 0;
+  font-family: @body_font;
+  font-size: 1em;
+  font-weight: normal;
+	border: none;
+}
+
+body {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  background-color: @background_colour;
+  color: @body_colour;
+  width: @body_width;
+  margin: 20px 0 40px 80px;
+}
+
+h1 {
+  .header;
+  font-size: 1.35em;
+  margin: 1.5em 0 1em;
+}
+
+h1.major {
+  text-transform: uppercase;
+}
+
+h2 {
+  .header;
+  font-size: 1.1em;
+  margin: 1em 0 0.5em -2px;
+}
+
+h2.user {
+	font-size: 1.25em;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 10px;
+	border: 2px solid @label_background_colour;
+}
+
+ul.navigation li.user {
+  display: block;
+  margin-bottom: 1em;
+	font-size: 1.25em;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+p.link_para {
+  margin: 40px 0;
+  a {
+	.button;
+  }
+	a:hover {
+		.hovered_button;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: @body_colour;
+	border-bottom: 2px dotted @label_background_colour;
+	padding: 2px 2px 0;
+}
+
+a:hover {
+	background-color: @input_background_colour;
+	border-bottom: 2px solid @label_background_colour;
+}
+
+ul.navigation {
+  display: block;
+/*  border: 1px solid @emphasis_colour;*/
+  margin: 0 0 0 -30px;
+  padding: 0;
+  list-style-type: none;
+  li {
+    display: inline;
+/*    float: left;*/
+    padding: 5px 10px;
+    a {
+      text-decoration: none;
+      border: none;
+      color: @emphasis_colour;
+    }
+		form {
+			display: inline;
+			div {
+				display: inline;
+				input[type="submit"], input[type="submit"]:hover {
+					text-decoration: none;
+		      border: none;
+					border-radius: 0;
+					font-size: 1em;
+					background-color: @background_colour;
+		      color: @emphasis_colour;
+				}
+				input[type="submit"]:hover {
+					background-color: #D8D8D8
+				}
+			}
+		}
+  }
+  li.head {
+    .knocked-out;
+  }
+}
+
+ul.account-list {
+  list-style-type: none;
+  margin: 2em 0 0 0;
+  width: 75%;
+  li {
+    margin: 0 0 1em -30px;
+    a {
+      color: @body_colour;
+      text-decoration: none;
+    }
+    span.action-link {
+      float: right;
+      padding: 0 0 0 2em;
+      a {
+        text-decoration: none;
+        color: @emphasis_colour;
+        :hover {
+          .knocked-out;
+        }
+      }
+    }
+  }
+}
+
+ul.flash {
+  margin: 1em 0 1em -30px;
+  display: block;
+  border: 3px solid @emphasis_colour;
+  list-style-type: none;
+  li {
+    display: block;
+    text-indent: 0;
+    margin-left: -20px;
+    padding: 10px 5px;
+  }
+  li.warning {
+    color: @emphasis_colour;
+  }
+}
+
+ul#navigation {
+  list-style-type: none;
+  display: block;
+  height: 20px;
+  li {
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    width: 100px;
+    padding: 2px 4px;
+    float: right;
+    background-color: @highlight_colour;
+    -webkit-border-radius: 5px;
+    border: 1px solid @header_colour;
+    a {
+      color: inherit;
+      border: none;
+      text-decoration: none;
+      padding: 2px 4px;
+      :hover {
+        background-color: #D8D8D8
+      }
+    }
+  }
+}
+
+#openid_identifier {
+  background-image: url(/images/openid-logo.gif);
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
+div.field {
+	text-align: left;
+	max-width: 40em;
+	padding: 8px 4px;
+	margin: 24px 0;
+	.rounded;
+	background-color: @label_background_colour;
+	label, input, textarea {
+		padding: 8px 2% 8px;
+		display: inline-block;
+    vertical-align: top;
+	}
+	label {
+		width: 40%;
+		background-color: @label_background_colour;
+	}
+	input, textarea {
+		width: 50%;
+		border: none;
+		background-color: @input_background_colour;
+	}
+  textarea {
+    width:96%;
+  }
+}
+
+#sign-up-form, #edit-form, #notice-form,
+#password-reset-request-form, #password-reset-form,
+#log-in-form, #user-form, #sig-form {
+	text-align: right;
+	input[type="submit"] {
+		.button;
+	}
+	input[type="submit"]:hover {
+		.hovered_button;
+	}
+	textarea {
+		border: 8px solid @label_background_colour;
+		padding: 2px;
+		-webkit-border-radius: 12px;
+		   -moz-border-radius: 12px;
+		        border-radius: 12px;
+	}
+	p.hint {
+		font-size: 0.9em;
+		text-align: left;
+		margin: 4px 0 24px;
+		padding: 0 16px;
+	}
+	p.error_msg {
+		float: right;
+		margin-right: -@body_width/2;
+	}
+	p.error_msg:before {
+		content: "** ";
+	}
+}
+
+.actionlinks {
+	margin-top: 4em;
+	a, input[type="submit"] {
+		.button;
+		.plainlink;
+	}
+	a:hover, input[type="submit"]:hover {
+		.hovered_button;
+	}
+	a, form {
+		display: inline-block;
+	}
+}
+
+#messages {
+  border: 3px solid @emphasis_colour;
+  background-color: @label_background_colour;
+  text-align: center;
+  padding: 9px;
+  border-radius: 9px;
+  margin: 2em 0;
+  width: 95%;
+
+/*  opacity: 0;
+  -webkit-transition: opacity 3s;
+
+*/	ul {
+	  li {
+	    margin: 0 0 0.4em 0;
+	  }
+	  list-style-type: none;
+		padding: 0;
+	}
+}
+
+#reset-token {
+	margin-top: 4em;
+	a {
+	.button;
+	.plainlink;
+	}
+}
+
+ul.plainlist {
+  margin-left: 0;
+  li {
+    list-style-type: none;
+    margin-bottom: 1em;
+  }
+}
+
+span.role {
+  text-transform: uppercase;
+}

@@ -1,0 +1,29 @@
+<h1>Log In</h1>
+<p>You must log in using a recognized email address and valid password to use this site, unless you prefer to use OpenId.</p>
+<p>If you do not have an account, you can <a href="/user/new">create one</a> easily and quickly. We only need your email address and a password, we don't ask for any other personal information.</p>
+
+<div id="log-in-form">
+  <%- messages() %>
+  <form action="/login" method="post">
+    <div class="field required">
+      <label for="user_email">Your email address</label>
+      <input type="text" name="user[email]" id="user_email"
+             value="<%- maybe(u, 'email') %>"/>
+    </div>
+    <div class="field required">
+      <label for="user_password">Your password</label>
+      <input type="password" name="user[password]"
+             id="user_password" />
+    </div>
+    
+    <p class="hint">
+	    <a href="/password_reset/request">Have you forgotten your password?</a>
+	 </p>
+	 <h1>Use OpenId</h1>
+	<div class="field">
+		<label for="open_id">Your OpenId URL</label>
+		<input type="text" name="user[open_id]" value="" id="open_id" />
+	</div>
+   <input type="submit" name="submit" value="Log in" id="submit" />
+  </form>
+</div>

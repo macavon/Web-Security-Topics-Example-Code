@@ -1,0 +1,6 @@
+<h1>Password Reset Message</h1>
+<h2>For demonstration purposes only</h2>
+<p>The link below would be sent in a message to the email address <%- u.email %>, <em>never displayed in the user's browser</em>.</p>
+<div id="reset-token">
+	<a href="/password_reset/<%- u.resetToken %>">Reset password</a>
+</div>

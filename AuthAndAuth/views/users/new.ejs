@@ -1,0 +1,10 @@
+<h1>New Account</h1>
+<p>Please fill in all the fields below.</p>
+<div id="sign-up-form">
+	<%- messages() %>
+	<form action="/user" method="post">
+			<%- partial('forms/user_fields') %>
+	<p class="hint">Passwords must be at least 8 characters long, containing at least one upper-case letter, lower-case letter and a digit that isn't on the end.</p>
+			<input type="submit" name="submit" value="Create the account" id="submit" />
+	</form>
+</div>

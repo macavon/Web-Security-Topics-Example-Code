@@ -1,0 +1,9 @@
+<h1>New Notice</h1>
+<div id="notice-form">
+	<%- messages() %>
+	<form action="." method="post">
+			<%- partial('forms/notice_recipients') %>
+			<%- partial('forms/notice_fields') %>
+			<input type="submit" name="submit" value="Post" id="submit" />
+	</form>
+</div>

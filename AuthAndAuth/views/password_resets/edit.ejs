@@ -1,0 +1,23 @@
+<h1>Reset Your Password</h1>
+<p>Please confirm your email address and provide a new password.</p>
+<div id="password-reset-form">
+	<%- messages() %>
+	<form action="/password_reset" method="post">
+		<input type="hidden" name="_method" value="put" />
+		<input type="hidden" name="user[reset_token]" value="<%- u.resetToken %>" />
+		<div class="field required">
+			<label for="user_email">Your email address</label>
+			<input type="text" name="user[email]" id="user_email" value=""/>
+		</div>
+		<div class="field required">
+			<label for="user_password">Choose a new password</label>
+			<input type="password" name="user[password]" id="user_password" />
+		</div>
+		<div class="field required">
+			<label for="user_confirm">Confirm the password</label>
+			<input type="password" name="user[confirm]" id="user_confirm" />
+		</div>
+	<p class="hint">Passwords must be at least 8 characters long, containing at least one upper-case letter, lower-case letter and a digit that isn't on the end.</p>
+			<input type="submit" name="submit" value="Reset" id="submit" />
+	</form>
+</div>

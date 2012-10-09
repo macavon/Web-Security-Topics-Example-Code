@@ -1,0 +1,10 @@
+<h1>Create A Signature</h1>
+<div id="sig-form">
+	<%- messages() %>
+	<form action="." method="post">
+		<div class="field">
+      <textarea name="signature[sig_text]" id="signature_sig_text" rows=3 cols=40><%= maybe(s, 'sigText') %></textarea>
+		</div>
+			<input type="submit" name="submit" value="Create" id="submit" />
+	</form>
+</div>

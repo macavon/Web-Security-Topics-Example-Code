@@ -1,0 +1,9 @@
+<h1>Change Your Email Address or Password</h1>
+<div id="edit-form">
+	<%- messages() %>
+	<form action="/user" method="post">
+			<%- partial('forms/user_change_fields') %>
+	<p class="hint">Passwords must be at least 8 characters long, containing at least one upper-case letter, lower-case letter and a digit that isn't on the end.</p>
+			<input type="submit" name="submit" value="Update" id="submit" />
+	</form>
+</div>

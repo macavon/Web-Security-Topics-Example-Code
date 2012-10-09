@@ -1,30 +1,34 @@
 h1. Example Code for the Web Design Topics Series
 
-The scripts in this repository contain the code used in "A Web Developer's Guide to Secure Communication":http://www.amazon.com/dp/0956737048/ by Nigel Chapman and Jenny Chapman, published by MacAvon Media. Further examples will be added as more books in the series are published.
+The scripts in this repository contain the code used in "A Web Developer's Guide to Secure Communication":http://websecuritytopics.info/books/secure-communication.html and "Authentication and Authorization on the Web":http://websecuritytopics.info/books/auth-and-auth.html by Nigel Chapman and Jenny Chapman, published by MacAvon Media.
 
 The purpose of the repository is to allow readers to download the examples from the book so they can experiment with them, and to provide starting points for their own scripts.
 
-The scripts in this repository are provided solely for the purposes of illustrating some principles of cryptography and secure communication. They are not intended for serious use in sensitive applications. We strongly recommend that you always use established libraries that provide implementations of current algorithms which are considered secure at the time of use. Neither the publisher nor the authors shall be liable for any consequence arising from the use of scripts in this book for any purpose other than illustration of general principles in the context of learning.
+The scripts in this repository are provided solely for the purposes of illustrating some principles of cryptography and Web security. They are not intended for serious use in sensitive applications. We strongly recommend that you always use established libraries that provide implementations of current algorithms which are considered secure at the time of use. Neither the publisher nor the authors shall be liable for any consequence arising from the use of scripts in this book for any purpose other than illustration of general principles in the context of learning.
 
 Pull requests will only be accepted for bugs and other errors, because we intend the repository to reflect the book as it was published. If you want to make major changes to the scripts, please fork the repository.
 
 h2. Errata
 
-Notes and corrections to errors discovered after the book was published are included in the errata directory.
+Notes and corrections to errors discovered after the books were published are included in the errata directory.
 
 h2. Dependencies
 
 Running the examples requires "Node.js":http://nodejs.org/.
 
+The example application for _Authentication and Authorization on the Web_ depends on "Express":http://expressjs.com and uses "Node-DBI":https://github.com/DrBenton/Node-DBI, and the "openid":https://github.com/havard/node-openid, "bcrypt":https://github.com/ncb000gt/node.bcrypt.js and "rbytes":https://github.com/akdubya/rbytes modules.
+
 If you want to run the tests in @encryption/test@, you will need "nodeunit":https://github.com/caolan/nodeunit.
 
-The most convenient way to install nodeunit and any other modules you may want is by using the npm package manager. If you install Node.js using its installer, npm should have been installed, otherwise, you can "install npm by hand":http://npmjs.org/doc/README.html.
+The most convenient way to install the necessary modules and their dependencies is by using the npm package manager. If you install Node.js using its installer, npm should have been installed, otherwise, you can "install npm by hand":http://npmjs.org/doc/README.html. For details about installing each module, consult the sites linked to above.
+
+These examples were tested using Node 0.6.7 and Express 2.5.9. They should run under more recent versions.
 
 h2. Contents
 
 h3. Extensions
 
-The @lib@ directory contains some extensions to JavaScript's built-in objects, which we used in the book to make the examples more readable. Some simple tests are included.
+The @lib@ directory contains some extensions to JavaScript's built-in objects, which we used in the books, especially _A Web Developer's Guide to Secure Communication_, to make the examples more readable. Some simple tests are included.
 
 From the preface:
 
@@ -34,7 +38,7 @@ If you want to use similar extensions in your own JavaScript programs, we sugges
 
 h3. Encryption
 
-Inside the @encryption@ directory, you can find the scripts implementing the cryptographic algorithms from the book. Listings 1–6 in the book map to files in the @lib@ sub-directory as follows:
+Inside the @encryption@ directory, you can find the scripts implementing the cryptographic algorithms from _A Web Developer's Guide to Secure Communication_. Listings 1–6 in the book map to files in the @lib@ sub-directory as follows:
 
 Listing 1 @shift-cipher.js@
 Listing 2 @shift-cipher-stream.js@
@@ -60,6 +64,18 @@ Listing 14 @https.js@
 To run either of these examples, you will need to create a self-signed certificate and private key.
 
 The line numbering in all the examples matches the line numbers in the listings in the book.
+
+h3. Authentication and Authorization Sample Application
+
+The @AuthAndAuth@ directory contains a rudimentary working version of the noticeboard application from _Authentication and Authorization on the Web_. This version incorporates all the refinements in the book, including OpenId and role-based authentication, the simpler versions we describe are not included, although you can find the code for checking admin privileges without the use of roles commented out.
+
+You will also find the @Things@ model used in the introduction to demonstrate the persistent objects module.
+
+The SQLite database in the db sub-directory has all the necessary tables defined, but contains no data except for the role names and levels in the @roles@ table. You will have to create your own users. To create the first admin user, you will need create a user and then edit the @users@ table and set their role level appropriately. If you wish to use a table of admin users, you will need to add appropriate rows to the @admins@ table. You safely ignore the @schema_migrations@ table, which is an artefact of the way the database is maintained.
+
+There are some model tests in @test@, but the changing nature of the Node.js platform and the test frameworks for it made it impossible to construct a stable test suite for the application while the book was being written. We will try again when these components have settled down.
+
+To run the application, cd to the @AuthAndAuth@ directory and type @node app.js@. Then go to the URL @http://localhost:3030@ in your browser, where you will see the login page. To set up your initial accounts, follow the link to the account creation page.
 
 h2. Licence
 

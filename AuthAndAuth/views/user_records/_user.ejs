@@ -1,0 +1,8 @@
+<li><a href="/admin/users/<%= user.id %>/edit"><%= user.email %></a>
+  <span class="action-link">
+    <form action="/admin/users/<%= user.id %>" method="post">
+      <input type="hidden" name="_method" value="delete" />
+  		<input type="submit" name="submit" value="Remove" id="submit" />
+   </form>
+   </span>
+</li>

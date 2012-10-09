@@ -1,0 +1,8 @@
+<h1>Your Signature</h1>
+<% if (s) { %>
+  <p><%= s.sigText %></p>
+  <p class="actionlinks"><a href="./signature/edit">Change</a></p>
+<% } else { %>
+  <p>As a premium user you are entitled to have a personalized signature for your notices.</p>
+  <p class="actionlinks"><a href="./signature/new">Create Your Signature</a></p>
+<% } %>

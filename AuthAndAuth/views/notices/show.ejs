@@ -1,0 +1,18 @@
+<h1><%= n.heading %></h1>
+<% if (!n.isPublic()) { %>
+<p>To: <%= n.recipientIds.join(', ') %></p>
+<% } %>
+<p><%= n.body %></p>
+<% if (sig) { %>
+<p><%= sig %></p>
+<% } %>
+<p class="provenance">Posted by <%= poster %> on <%= n.createdAt %>.</p>
+<% if (!readOnly || adminUser) { %>
+<div class="actionlinks">
+  <a href="./<%= n.id %>/edit">Edit</a>
+  <form action="./<%= n.id %>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+		<input type="submit" name="submit" value="Remove" id="submit" />
+ </form>
+</div>
+<% } %>

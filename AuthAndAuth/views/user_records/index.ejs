@@ -1,0 +1,9 @@
+<h1>All Users</h1>
+<%- messages() %>
+<ul class="account-list">
+  <% if (adminUser) { %>
+  <%- partial('user', us) %>
+  <% } else { %>
+  <%- partial('user_list_item', us) %>
+  <% } %>
+</ul>

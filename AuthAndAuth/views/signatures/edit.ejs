@@ -1,0 +1,11 @@
+<h1>Edit Your Signature</h1>
+<div id="sig-form">
+	<%- messages() %>
+	<form action="." method="post">
+     <input type="hidden" name="_method" value="put" />
+		<div class="field">
+      <textarea name="signature[sig_text]" id="signature_sig_text" rows=3 cols=40><%= maybe(s, 'sigText') %></textarea>
+		</div>
+			<input type="submit" name="submit" value="Update" id="submit" />
+	</form>
+</div>

@@ -1,0 +1,17 @@
+<div class="field required">
+	<input type="hidden" name="_method" value="put" />
+	<p class="hint">Leave this field alone if you only want to change your password.</p>
+	<label for="user_email">New email address</label>
+	<input type="text" name="user[email]" id="user_email" value="<%- maybe(u, 'email') %>"/>
+</div>
+<div class="field required">
+	<p class="hint">You must enter your password to make any changes.</p>
+	<label for="user_old_password">Your current password</label><input type="password" name="user[old_password]" id="user_old_password" />
+</div>
+<p class="hint">Leave these next two fields blank if you only want to change your email address.</p>
+<div class="field">
+	<label for="user_password">Choose a new password</label><input type="password" name="user[password]" id="user_password" />
+</div>
+<div class="field">
+	<label for="user_confirm">Confirm the new password</label><input type="password" name="user[confirm]" id="user_confirm" />
+</div>
